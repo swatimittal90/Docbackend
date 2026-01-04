@@ -65,14 +65,18 @@ const generateResponse = async (chatElement) => {
     try {
         const response = await fetch(API_URL, requestOptions);
         const data = await response.json();
-        if (!response.ok) throw new Error(data.error.message);
+        if (!response.ok) throw new Error(data.error.message || "API Error");
 
-        // Gemini Response Structure: candidates[0].content.parts[0].text
-        messageElement.textContent = data.candidates[0].content.parts[0].text.trim();
+        // Check if we have a valid response structure
+        if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
+            messageElement.textContent = data.candidates[0].content.parts[0].text.trim();
+        } else {
+            throw new Error("No response content generated (Check Safety Settings)");
+        }
     } catch (error) {
         messageElement.classList.add("error");
-        messageElement.textContent = "Oops! Something went wrong. Please try again.";
-        console.error("Gemini API Error:", error);
+        messageElement.textContent = `Error: ${error.message}`;
+        console.error("Gemini API detailed error:", error);
     } finally {
         chatbox.scrollTo(0, chatbox.scrollHeight);
     }
