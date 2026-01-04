@@ -2,18 +2,23 @@
 
 :root {
     /* Color Palette */
-    --primary-color: #0F172A; /* Deep Navy */
-    --accent-color: #F59E0B; /* Amber/Gold */
-    --text-color: #334155; /* Slate 700 */
-    --text-light: #94A3B8; /* Slate 400 */
-    --bg-color: #F8FAFC; /* Slate 50 */
+    --primary-color: #0F172A;
+    /* Deep Navy */
+    --accent-color: #F59E0B;
+    /* Amber/Gold */
+    --text-color: #334155;
+    /* Slate 700 */
+    --text-light: #94A3B8;
+    /* Slate 400 */
+    --bg-color: #F8FAFC;
+    /* Slate 50 */
     --white: #FFFFFF;
     --success: #10B981;
-    
+
     /* Spacing & Layout */
     --container-width: 1200px;
     --border-radius: 12px;
-    
+
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Outfit', sans-serif;
@@ -56,8 +61,13 @@ ul {
     transform: translateY(20px);
 }
 
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
 
 @keyframes fadeInUp {
     to {
@@ -180,7 +190,7 @@ ul {
     right: -20%;
     width: 1000px;
     height: 1000px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, rgba(255,255,255,0) 70%);
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
     z-index: 1;
     border-radius: 50%;
 }
@@ -265,6 +275,76 @@ ul {
     color: var(--text-color);
 }
 
+/* User Journey Section */
+.journey-section {
+    padding: 100px 0;
+    background-color: #F8FAFC;
+}
+
+.journey-steps {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.step-card {
+    background: transparent;
+    text-align: center;
+    max-width: 250px;
+    position: relative;
+    z-index: 2;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 24px;
+    box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);
+}
+
+.step-card h3 {
+    margin-bottom: 12px;
+    color: var(--primary-color);
+}
+
+.step-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.step-connector {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #CBD5E1;
+    margin-top: 30px;
+    /* Aligns with center of step number */
+    max-width: 100px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .journey-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .step-connector {
+        display: none;
+    }
+}
+
 /* Lead Magnet Section */
 .lead-magnet {
     padding: 100px 0;
@@ -320,7 +400,8 @@ ul {
     font-size: 0.9rem;
 }
 
-.form-group input, .form-group select {
+.form-group input,
+.form-group select {
     width: 100%;
     padding: 12px;
     border: 2px solid #E2E8F0;
@@ -330,7 +411,8 @@ ul {
     transition: 0.2s;
 }
 
-.form-group input:focus, .form-group select:focus {
+.form-group input:focus,
+.form-group select:focus {
     outline: none;
     border-color: var(--primary-color);
 }
@@ -350,7 +432,8 @@ ul {
 }
 
 .submit-btn:hover {
-    background-color: #D97706; /* Darker amber */
+    background-color: #D97706;
+    /* Darker amber */
 }
 
 .privacy-note {
@@ -362,7 +445,7 @@ ul {
 
 .loader {
     display: none;
-    border: 3px solid rgba(255,255,255,0.3);
+    border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     border-top: 3px solid #fff;
     width: 20px;
@@ -374,8 +457,13 @@ ul {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .submit-btn.loading .btn-text {
@@ -431,23 +519,23 @@ ul {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .stats-grid {
         flex-direction: column;
         gap: 30px;
     }
-    
+
     .lead-container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
-    
+
     .footer-links a {
         margin: 0 10px;
     }
