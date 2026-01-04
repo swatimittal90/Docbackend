@@ -1,19 +1,23 @@
 /* HelloSchool - Premium Landing Page Styles */
 
 :root {
-    /* Color Palette */
-    --primary-color: #0F172A;
-    /* Deep Navy */
+    /* Color Palette - Dark Mode */
+    --primary-color: #F8FAFC;
+    /* Light Slate - Text Heading */
     --accent-color: #F59E0B;
     /* Amber/Gold */
-    --text-color: #334155;
-    /* Slate 700 */
+    --text-color: #CBD5E1;
+    /* Slate 300 - Body Text */
     --text-light: #94A3B8;
     /* Slate 400 */
-    --bg-color: #F8FAFC;
-    /* Slate 50 */
+    --bg-color: #020617;
+    /* Slate 950 - Main Background */
+    --bg-card: #1E293B;
+    /* Slate 800 - Card Background */
     --white: #FFFFFF;
     --success: #10B981;
+    --border-color: #334155;
+    /* Slate 700 */
 
     /* Spacing & Layout */
     --container-width: 1200px;
@@ -147,6 +151,7 @@ ul {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    color: var(--text-light);
 }
 
 .hero-actions {
@@ -198,9 +203,10 @@ ul {
 /* Stats Section */
 .stats {
     padding: 60px 0;
-    background: var(--white);
-    border-top: 1px solid #E2E8F0;
-    border-bottom: 1px solid #E2E8F0;
+    background: var(--bg-card);
+    /* Darker card */
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .stats-grid {
@@ -248,12 +254,12 @@ ul {
 }
 
 .feature-card {
-    background: var(--white);
+    background: var(--bg-card);
     padding: 40px;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     transition: 0.3s;
-    border: 1px solid #F1F5F9;
+    border: 1px solid var(--border-color);
 }
 
 .feature-card:hover {
@@ -278,7 +284,8 @@ ul {
 /* User Journey Section */
 .journey-section {
     padding: 100px 0;
-    background-color: #F8FAFC;
+    background-color: #0F172A;
+    /* Slightly lighter than main bg */
 }
 
 .journey-steps {
@@ -326,7 +333,7 @@ ul {
 .step-connector {
     flex-grow: 1;
     height: 2px;
-    background-color: #CBD5E1;
+    background-color: var(--border-color);
     margin-top: 30px;
     /* Aligns with center of step number */
     max-width: 100px;
@@ -348,7 +355,8 @@ ul {
 /* Lead Magnet Section */
 .lead-magnet {
     padding: 100px 0;
-    background-color: var(--primary-color);
+    background-color: #0F172A;
+    /* Keep separation */
     color: var(--white);
 }
 
@@ -376,11 +384,11 @@ ul {
 }
 
 .lead-form-wrapper {
-    background: var(--white);
+    background: var(--bg-card);
     padding: 40px;
     border-radius: var(--border-radius);
     color: var(--text-color);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .lead-form h3 {
@@ -404,7 +412,9 @@ ul {
 .form-group select {
     width: 100%;
     padding: 12px;
-    border: 2px solid #E2E8F0;
+    background: #020617;
+    color: white;
+    border: 2px solid var(--border-color);
     border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
@@ -477,7 +487,8 @@ ul {
 /* Footer */
 .footer {
     padding: 60px 0 30px;
-    background-color: #F1F5F9;
+    background-color: #020617;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
@@ -506,7 +517,7 @@ ul {
     text-align: center;
     font-size: 0.85rem;
     color: var(--text-light);
-    border-top: 1px solid #E2E8F0;
+    border-top: 1px solid var(--border-color);
     padding-top: 30px;
 }
 
