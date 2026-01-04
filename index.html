@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloSchool - The Future of Parent-School Connection</title>
+    <meta name="description" content="Join HelloSchool. Smart updates for smart parents. Get started today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">HelloSchool<span class="dot">.</span></a>
+            <button class="cta-button-small" onclick="scrollToForm()">Get Early Access</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="fade-in-up">Transform How You Connect With Your Child's School</h1>
+            <p class="fade-in-up delay-1">Real-time updates, instant communication. Experience the peace of mind you deserve.</p>
+            <div class="hero-actions fade-in-up delay-2">
+                <button class="cta-button-primary" onclick="scrollToForm()">Join the Waitlist</button>
+                <a href="#features" class="learn-more">Learn More &darr;</a>
+            </div>
+        </div>
+        <div class="hero-background-shape"></div>
+    </header>
+
+    <!-- Value Stats / Social Proof -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Partner Schools</p>
+            </div>
+            <div class="stat-item">
+                <h3>10k+</h3>
+                <p>Happy Parents</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Instant Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why HelloSchool?</h2>
+                <p>Designed for modern parents and forward-thinking schools.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">💬</div>
+                    <h3>Direct WhatsApp Updates</h3>
+                    <p>Get daily reports and urgent alerts directly on your favorite chat app. No new apps to install.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📞</div>
+                    <h3>Smart Voice Interaction</h3>
+                    <p>Missed a message? Just call our AI assistant to get a verbal summary of your child's day.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔒</div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is encrypted and safe. We prioritize your family's privacy above all else.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Capture Form Section -->
+    <section id="join" class="lead-magnet">
+        <div class="container lead-container">
+            <div class="lead-text">
+                <h2>Don't Miss Out on Better Communication</h2>
+                <p>Sign up now to get our exclusive guide: <strong>"10 Questions Every Parent Should Ask Their School"</strong> and early access to the platform.</p>
+                <ul class="benefits-list">
+                    <li>✅ Instant WhatsApp integration</li>
+                    <li>✅ Priority VoiceAPI Access</li>
+                    <li>✅ Free "Better Schooling" PDF Guide</li>
+                </ul>
+            </div>
+            <div class="lead-form-wrapper">
+                <form id="leadForm" class="lead-form">
+                    <h3>Get Started</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Swati Mittal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number (WhatsApp)</label>
+                        <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">I am a...</label>
+                        <select id="role">
+                            <option value="parent">Parent</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="administrator">School Administrator</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Get My Access</span>
+                        <div class="loader"></div>
+                    </button>
+                    <p class="privacy-note">We respect your privacy. No spam, ever.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>HelloSchool.</h4>
+                    <p>Connecting families and schools.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 HelloSchool Inc. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
