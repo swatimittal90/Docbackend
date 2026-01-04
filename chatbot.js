@@ -49,35 +49,39 @@ const createChatLi = (message, className) => {
 }
 
 const generateResponse = async (chatElement) => {
-    // Using gemini-pro as a more stable default
-    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`;
+    const API_URL = "https://api.groq.com/openai/v1/chat/completions";
     const messageElement = chatElement.querySelector("p");
 
     const requestOptions = {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${API_KEY}`
+        },
         body: JSON.stringify({
-            contents: [{
-                parts: [{ text: `You are a helpful assistant for HelloSchool, a school communication platform. Answer this user query concisely: ${userMessage}` }]
-            }]
+            model: "llama3-8b-8192",
+            messages: [
+                { role: "system", content: "You are a helpful assistant for HelloSchool, a school communication platform. Answer concisely." },
+                { role: "user", content: userMessage }
+            ]
         })
     };
 
     try {
         const response = await fetch(API_URL, requestOptions);
         const data = await response.json();
-        if (!response.ok) throw new Error(data.error.message || "API Error");
+        if (!response.ok) throw new Error(data.error?.message || "API Error");
 
-        // Check if we have a valid response structure
-        if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
-            messageElement.textContent = data.candidates[0].content.parts[0].text.trim();
+        // Groq/OpenAI Response Structure
+        if (data.choices && data.choices[0].message) {
+            messageElement.textContent = data.choices[0].message.content.trim();
         } else {
-            throw new Error("No response content generated (Check Safety Settings)");
+            throw new Error("No response content generated");
         }
     } catch (error) {
         messageElement.classList.add("error");
         messageElement.textContent = `Error: ${error.message}`;
-        console.error("Gemini API detailed error:", error);
+        console.error("Groq API detailed error:", error);
     } finally {
         chatbox.scrollTo(0, chatbox.scrollHeight);
     }
